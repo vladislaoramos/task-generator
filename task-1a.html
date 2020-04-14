@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Генератор задач</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header"><h1><a id="index-link" href="index.html">Генератор задач по информатике</a></h1></div>
+        <div id="sidebar">
+            <h3>Типы заданий</h3>
+            <ul id="tasks-list">
+                <li><b>Бит чётности</b></li>
+                <li><a href="#task-2a.html">Калькулятор</a></li>
+                <li><a href="#task-3a.html">Динамика</a></li>
+            </ul>
+            <hr>
+            <ul>
+            <!-- сразу открывается простой уровень -->
+                <li><b>Уровень A</b></li>
+                <li><a href="task-1b.html">Уровень B</a></li>
+                <li><a href="task-1c.html">Уровень C</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h2>Бит чётности</h2>
+            <p class="task-text">
+                На вход алгоритма подаётся натуральное число N. Алгоритм строит по нему новое число R следующим образом. <br>
+                &nbsp;1) Строится двоичная запись числа N. <br>
+                &nbsp;2) К этой записи дописываются справа ещё два разряда по следующему правилу: <br>
+                &nbsp;&nbsp;&nbsp;а) складываются все цифры двоичной записи, и остаток от деления суммы на 2 дописывается в конец числа (справа). Например, запись 11100 преобразуется в запись 111001; <br>
+                &nbsp;&nbsp;&nbsp;б) над этой записью производятся те же действия — справа дописывается остаток от деления суммы цифр на 2. <br>
+                Полученная таким образом запись (в ней на два разряда больше, чем в записи исходного числа N) является двоичной записью искомого числа R. Укажите минимальное число R, которое превышает <span class="supremum">100</span> и может являться результатом работы алгоритма. В ответе это число запишите в десятичной системе.
+            </p>
+            <p id="task-id"><em><span class="task-id-text">ID: #12345</span></em></p>
+            <form method="post">
+                <label for="key-field">Введите ключ</label>
+                <input type="text" name="key" class="key-field">
+                <br>
+                <br>
+                <input type="submit" value="Сгенерировать">
+            </form>
+            <details class="answer-spoiler">
+                <summary><b>Ответ</b></summary>
+                    <p><span class="answer"></span></p>
+            </details>
+        </div>
+        <div id="footer">&copy; Владислав Рамусь</div>
+        <script src="task-1a.js"></script>
+    </body>
+</html>
