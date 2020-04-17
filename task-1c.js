@@ -45,7 +45,7 @@ form.onclick = function() {
 form.onsubmit = function(evt) {
     evt.preventDefault();
     // console.log('Generate!');
-    let number = randomInteger(20, 30);
+    let number = randomInteger(46, 55);
     // console.log("number:", number);
     let answer = parseInt(generateResult(number), 2);
     // console.log("answer:", answer);
