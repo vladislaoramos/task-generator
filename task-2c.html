@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Генератор задач</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header"><h1><a id="index-link" href="index.html">Генератор задач по информатике</a></h1></div>
+        <div id="sidebar">
+            <h3>Типы заданий</h3>
+            <ul id="tasks-list">
+                <li><a href="task-1a.html">Бит чётности</a></li>
+                <li><b>Калькулятор</b></li>
+                <li><a href="#task-3a.html">Динамика</a></li>
+            </ul>
+            <hr>
+            <ul>
+            <!-- сразу открывается простой уровень -->
+                <li><a href="task-2a.html">Уровень A</a></li>
+                <li><a href="task-2b.html">Уровень B</a></li>
+                <li><b>Уровень C</b></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h2>Калькулятор</h2>
+            <!-- У исполнителя Аккорд две команды, которым присвоены номера:
+            1. прибавь 3
+            2. умножь на x
+            где x – неизвестное положительное число. Выполняя первую из них, Аккорд добавляет к числу на экране 1, а выполняя вторую, умножает это число на x.
+            Программа для исполнителя Калькулятор – это последовательность номеров команд.
+            Известно, что программа 12112 переводит число 3 в число 36. Определите значение x. -->
+
+            <p class="task-text">
+                У исполнителя Калькулятор две команды, которым присвоены номера:<br>
+                &nbsp;&nbsp;1. <span class="first-cmd">вычти 3</span><br>
+                &nbsp;&nbsp;2. <span class="second-cmd">умножь на 2</span><br>
+                &nbsp;&nbsp;3. <span class="third-cmd">вычти x</span><br>
+                Выполняя первую из них, Калькулятор <span class="first-verb-form">вычитает из числа на экране 3</span>, выполняя вторую,
+                <span class="second-verb-form">умножает число на экране на 2</span>, а выполняя третью, <span class="third-verb-form">вычитает из числа на экране x</span>. Программа для исполнителя Калькулятор – это последовательность номеров команд.
+                Известно, что программа <span class="task-sol">12112</span> переводит число <span class="start-value">10</span> в число <span class="finish-value">32</span>. 
+                Определите значение <span class="third-cmd-value">x</span>.
+            </p>
+            <p id="task-id"><em><span class="task-id-text">ID: #12345</span></em></p>
+            <form method="post">
+                <label for="key-field">Введите ключ</label>
+                <input type="text" name="key" class="key-field">
+                <br>
+                <br>
+                <input type="submit" value="Сгенерировать">
+            </form>
+            <details class="answer-spoiler">
+                <summary><b>Ответ</b></summary>
+                    <p><span class="answer">121221</span></p>
+            </details>
+        </div>
+        <div id="footer">&copy; Владислав Рамусь</div>
+        <script src="task-2c.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    </body>
+</html>
