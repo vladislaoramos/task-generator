@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Генератор задач</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header"><h1><a id="index-link" href="index.html">Генератор задач по информатике</a></h1></div>
+        <div id="sidebar">
+            <h3>Типы заданий</h3>
+            <ul id="tasks-list">
+                <li><a href="task-1a.html">Бит чётности</a></li>
+                <li><a href="task-2a.html">Динамика</a></li>
+                <li><b>Динамика</b></li>
+            </ul>
+            <hr>
+            <ul>
+                <li><a href="task-3a.html">Уровень A</a></li>
+                <li><a href="task-3b.html">Уровень B</a></li>
+                <li><b>Уровень C</b></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h2>Динамика</h2>
+            <p class="task-text">
+                Исполнитель преобразует число, записанное на экране.
+                У исполнителя есть три команды, которым присвоены номера:<br>
+                &nbsp;&nbsp;1. <span class="first-cmd">Прибавить 2</span><br>
+                &nbsp;&nbsp;2. <span class="second-cmd">Прибавить 3</span><br>
+                Первая команда <span class="first-verb-form">прибавляет к числу на экране 2</span>, а вторая
+                <span class="second-verb-form">прибавляет к числу на экране 3</span>.
+                Программа для Исполнителя – это последовательность команд.
+                Сколько есть программ, для
+                которых при исходном числе <span class="start-value">4</span>
+                результатом является число <span class="finish-value">25</span>, и при этом траектория вычислений
+                программы содержит число <span class="include-value">16</span> и не содержит
+                число <span class="exclude-value">22</span>?
+            </p>
+            <p id="task-id"><em><span class="task-id-text">ID: #12345</span></em></p>
+            <form method="post">
+                <label for="key-field">Введите ключ
+                    <input type="text" name="key" class="key-field">
+                </label>
+                <br>
+                <br>
+                <input type="submit" value="Сгенерировать">
+            </form>
+            <details class="answer-spoiler">
+                <summary><b>Ответ</b></summary>
+                <p><span class="answer">36</span></p>
+            </details>
+        </div>
+        <div id="footer">&copy; Владислав Рамусь</div>
+        <script src="task-3c.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    </body>
+</html>

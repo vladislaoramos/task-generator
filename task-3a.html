@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Генератор задач</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header"><h1><a id="index-link" href="index.html">Генератор задач по информатике</a></h1></div>
+        <div id="sidebar">
+            <h3>Типы заданий</h3>
+            <ul id="tasks-list">
+                <li><a href="task-1a.html">Бит чётности</a></li>
+                <li><a href="task-2a.html">Динамика</a></li>
+                <li><b>Динамика</b></li>
+            </ul>
+            <hr>
+            <ul>
+                <li><b>Уровень A</b></li>
+                <li><a href="task-3b.html">Уровень B</a></li>
+                <li><a href="task-3c.html">Уровень C</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h2>Динамика</h2>
+            <p class="task-text">
+                У Исполнител есть две команды, которым присвоены номера:<br>
+                &nbsp;&nbsp;1. <span class="first-cmd">прибавь 1</span><br>
+                &nbsp;&nbsp;2. <span class="second-cmd">умножь на 2</span><br>
+                Первая из них <span class="first-verb-form">прибавляет к числу на экране 1</span>, а вторая –
+                <span class="second-verb-form">умножает число на экране на 2</span>.
+                Сколько есть программ, которые число <span class="start-value">5</span>
+                преобразуют в число <span class="finish-value">21</span>?
+            </p>
+            <p id="task-id"><em><span class="task-id-text">ID: #12345</span></em></p>
+            <form method="post">
+                <label for="key-field">Введите ключ
+                    <input type="text" name="key" class="key-field">
+                </label>
+                <br>
+                <br>
+                <input type="submit" value="Сгенерировать">
+            </form>
+            <details class="answer-spoiler">
+                <summary><b>Ответ</b></summary>
+                <p><span class="answer">8</span></p>
+            </details>
+        </div>
+        <div id="footer">&copy; Владислав Рамусь</div>
+        <script src="task-3a.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    </body>
+</html>
