@@ -24,6 +24,10 @@ li {
     list-style-position: outside;
 }
 
+a { 
+    text-decoration: none;
+}
+
 .answer-spoiler {
     margin-top: 10px;;
 }
