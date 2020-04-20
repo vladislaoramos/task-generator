@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
     <head>
         <meta charset="utf-8">
         <title>Генератор задач</title>
@@ -10,41 +10,51 @@
         <div id="sidebar">
             <h3>Типы заданий</h3>
             <ul id="tasks-list">
-                <li><a href="task-1a.html">Бит чётности</a></li>
-                <li><a href="task-2a.html">Калькулятор</a></li>
-                <li><b>Динамика</b></li>
+                <li class="menu-item"><a href="task-1a.html">Бит чётности</a></li>
+                <li class="menu-item"><a href="task-2a.html">Калькулятор</a></li>
+                <li class="menu-item"><b>Динамика</b></li>
             </ul>
             <hr>
             <ul>
-                <li><a href="task-3a.html">Уровень A</a></li>
-                <li><b>Уровень B</b></li>
-                <li><a href="task-3c.html">Уровень C</a></li>
+                <li class="menu-item"><a href="task-3a.html">Уровень A</a></li>
+                <li class="menu-item"><b>Уровень B</b></li>
+                <li class="menu-item"><a href="task-3c.html">Уровень C</a></li>
             </ul>
         </div>
         <div id="content">
             <h2>Динамика</h2>
-            <p class="task-text">
-                У Исполнител есть две команды, которым присвоены номера:<br>
-                &nbsp;&nbsp;1. <span class="first-cmd">прибавь 2</span><br>
-                &nbsp;&nbsp;2. <span class="second-cmd">прибавь 3</span><br>
-                Первая из них <span class="first-verb-form">прибавляет к числу на экране 2</span>, а вторая –
-                <span class="second-verb-form">прибавляет к числу на экране 3</span>.
-                Сколько есть программ, преобразующих число <span class="start-value">1</span>
-                в <span class="finish-value">24</span>, предпоследней командой которых является «1»?
-            </p>
-            <p id="task-id"><em><span class="task-id-text">ID: #12345</span></em></p>
+            <div class="intro">
+                <p>
+                    <strong>Тема:</strong> Динамическое программирование. <br>
+                    <strong>Что нужно знать:</strong>
+                    <ul class="intro-list">
+                        <li class="intro-list-item">
+                            динамическое программирование – это способ решения сложных задач путем сведения их к более простым задачам того же типа;
+                        </li>
+                        <li class="intro-list-item">
+                            с помощью динамического программирования решаются задачи, которые требуют полного перебор вариантов;
+                        </li>
+                        <li class="intro-list-item">
+                            динамическое программирование позволяет ускорить выполнение программы за счет использования дополнительной памяти; полный перебор не требуется, поскольку запоминаются решения всех задач с меньшими значениями параметров.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="tips">
+                <p>
+                    Чтобы получить набор заданий, укажите произвольный <em>ключ</em> и количество вариантов. Ключ – это 5-значная последовательность из цифр, обеспечивающая постоянный доступ к тем же заданиям.
+                </p>
+            </div>
+            <!-- <p id="task-id"><em><span class="task-id-text">ID: #12345</span></em></p> -->
             <form method="post">
-                <label for="key-field">Введите ключ
-                    <input type="text" name="key" class="key-field">
-                </label>
-                <br>
-                <br>
-                <input type="submit" value="Сгенерировать">
+                <label for="key-field">Уникальный ключ</label> <br>
+                <input type="text" name="key" class="key-field"><br>
+                <label for="count-field">Количество заданий</label> <br>
+                <input type="text" name="count" class="count-field"> <br>
+                <!-- <input type="submit" value="Сгенерировать"> -->
+                <button class="submit-button" type="submit">Сгенерировать</button>
             </form>
-            <details class="answer-spoiler">
-                <summary><b>Ответ</b></summary>
-                <p><span class="answer">5</span></p>
-            </details>
+            <!-- ВСТАВКА -->
         </div>
         <div id="footer">&copy; Владислав Рамусь</div>
         <script src="task-3b.js"></script>

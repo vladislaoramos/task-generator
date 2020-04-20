@@ -118,7 +118,6 @@ form.onsubmit = function(evt) {
         let previous = parseInt(generateResult(number - 1), 2);
         let sup = randomInteger(previous, answer - 1);
         let text = formatTaskText(sup);
-        console.log(text);
         addTask(text, i + 1, answer);
     }
     submitButton.disabled = true;

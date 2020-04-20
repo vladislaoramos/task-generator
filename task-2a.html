@@ -10,47 +10,51 @@
         <div id="sidebar">
             <h3>Типы заданий</h3>
             <ul id="tasks-list">
-                <li><a href="task-1a.html">Бит чётности</a></li>
-                <li><b>Калькулятор</b></li>
-                <li><a href="task-3a.html">Динамика</a></li>
+                <li class="menu-item"><a href="task-1a.html">Бит чётности</a></li>
+                <li class="menu-item"><b>Калькулятор</b></li>
+                <li class="menu-item"><a href="task-3a.html">Динамика</a></li>
             </ul>
             <hr>
             <ul>
-                <li><b>Уровень A</b></li>
-                <li><a href="task-2b.html">Уровень B</a></li>
-                <li><a href="task-2c.html">Уровень C</a></li>
+                <li class="menu-item"><b>Уровень A</b></li>
+                <li class="menu-item"><a href="task-2b.html">Уровень B</a></li>
+                <li class="menu-item"><a href="task-2c.html">Уровень C</a></li>
             </ul>
         </div>
         <div id="content">
             <h2>Калькулятор</h2>
-            <p class="task-text">
-                У исполнителя Калькулятор две команды, которым присвоены номера:<br>
-                &nbsp;&nbsp;1. <span class="first-cmd">вычти 5</span><br>
-                &nbsp;&nbsp;2. <span class="second-cmd">прибавь 2</span><br>
-                Выполняя первую из них, Калькулятор <span class="first-verb-form">вычитает из числа на экране 5</span>, а выполняя вторую,
-                <span class="second-verb-form">прибавляет к числу на экране 2</span>. Запишите порядок команд в программе получения из числа 
-                <span class="start-value">6</span> числа <span class="finish-value">11</span>,
-                содержащей 6 команд, указывая лишь номера команд.
-                (Например, программа 21211 -- это программа <br>
-                &nbsp;&nbsp;<strong>умножь на 4</strong><br>
-                &nbsp;&nbsp;<strong>прибавь 3</strong><br>
-                &nbsp;&nbsp;<strong>умножь на 4</strong><br>
-                &nbsp;&nbsp;<strong>прибавь  3</strong><br>
-                &nbsp;&nbsp;<strong>прибавь 3</strong>,<br>
-                которая преобразует число 2 в 50.)
-              </p>
-            <p id="task-id"><em><span class="task-id-text">ID: #12345</span></em></p>
+            <div class="intro">
+                <p>
+                    <strong>Тема:</strong> Поиск алгоритма минимальной длины для исполнителя. <br>
+                    <strong>Что нужно знать:</strong>
+                    <ul class="intro-list">
+                        <li class="intro-list-item">
+                            исполнитель – это человек, группа людей, животное, машина или другой объект, который может понимать и выполнять некоторые команды.
+                        </li>
+                        <li class="intro-list-item">
+                            чтобы определить все возможные результаты работы алгоритма, нужно обозначить входные данные как переменные и выполнить алгоритм
+                        </li>
+                        <li class="intro-list-item">
+                            для нахождения оптимальной программы, преобразующей одно число в другое с помощью заданного набора команд, проще всего строить дерево возможных вариантов, выясняя, какие результаты в принципе можно получить после одного шага, после двух шагов и т.д.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="tips">
+                <p>
+                    Чтобы получить набор заданий, укажите произвольный <em>ключ</em> и количество вариантов. Ключ – это 5-значная последовательность из цифр, обеспечивающая постоянный доступ к тем же заданиям.
+                </p>
+            </div>
+            <!-- <p id="task-id"><em><span class="task-id-text">ID: #12345</span></em></p> -->
             <form method="post">
-                <label for="key-field">Введите ключ</label>
-                <input type="text" name="key" class="key-field">
-                <br>
-                <br>
-                <input type="submit" value="Сгенерировать">
+                <label for="key-field">Уникальный ключ</label> <br>
+                <input type="text" name="key" class="key-field"><br>
+                <label for="count-field">Количество заданий</label> <br>
+                <input type="text" name="count" class="count-field"> <br>
+                <!-- <input type="submit" value="Сгенерировать"> -->
+                <button class="submit-button" type="submit">Сгенерировать</button>
             </form>
-            <details class="answer-spoiler">
-                <summary><b>Ответ</b></summary>
-                    <p><span class="answer">222122</span></p>
-            </details>
+            <!-- ВСТАВКА -->
         </div>
         <div id="footer">&copy; Владислав Рамусь</div>
         <script src="task-2a.js"></script>

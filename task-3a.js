@@ -75,73 +75,120 @@ function generateResult (params) {
     return table[table.length - 1];
 }
 
-let form = document.querySelector('form');
-let key;
+TEXT =  "У Исполнителя есть две команды, которым присвоены номера:\n" +
+        "    1. {0}\n" +
+        "    2. {1}\n" +
+        "Первая из них {2}, а вторая – " +
+        "{3}. Сколько есть программ, которые число {4} " +
+        "преобразуют в число {5}?";
 
-form.onclick = function () {
+String.prototype.format = function () {
+    var a = this;
+
+    for (var k in arguments) {
+            a = a.replace(new RegExp("\\{" + k + "\\}", 'g'), arguments[k]);
+    }
+
+    return a;
+}
+
+function addTask (text, varVal, ans) {
+    let content = document.querySelector('#content');
+    
+    let taskContent = document.createElement('div');
+    taskContent.setAttribute('class', 'task-content');
+    
+    let pVar = document.createElement('p');
+    let emVar = document.createElement('em');
+    emVar.textContent = 'Вариант ' + ' ' + varVal.toString(); //
+    pVar.appendChild(emVar);
+
+    let pTask = document.createElement('p');
+    pTask.setAttribute('class', 'task-text');
+    pTask.textContent = text;
+
+    let spoiler = document.createElement('details');
+    spoiler.setAttribute('class', 'answer-spoiler');
+
+    let summary = document.createElement('summary');
+    summary.setAttribute('class', 'answer');
+    summary.textContent = 'Ответ';
+
+    let answer = document.createElement('p');
+    answer.textContent = ans;
+
+    spoiler.appendChild(summary);
+    spoiler.appendChild(answer);
+
+    taskContent.appendChild(document.createElement('hr'));
+    taskContent.appendChild(pVar);
+    taskContent.appendChild(pTask);
+    taskContent.appendChild(spoiler);
+
+    content.appendChild(taskContent);
+
+}
+
+let form = document.querySelector('form');
+let submitButton = document.querySelector('.submit-button');
+let key;
+let varCount;
+
+form.onclick = function() {
     key = document.querySelector('.key-field');
+    varCount = document.querySelector('.count-field');
     Math.seedrandom(key.value);
 }
 
 form.onsubmit = function (evt) {
     evt.preventDefault();
 
-    let parameters = {
-        start: randomInteger(1, 5),
-        finish: randomInteger(15, 25),
-        commands: transformCommands(generateCommands())
-    };
+    let flag = document.getElementsByClassName('task-content').length;
 
-    let answer = generateResult(parameters);
-
-    while (answer < 5) {
-        parameters.start = randomInteger(1, 5);
-        parameters.finish = randomInteger(15, 25);
-        parameters.commands = transformCommands(generateCommands());
-        answer = generateResult(parameters);
+    while (flag > 0) {
+        let div = document.querySelector('.task-content');
+        div.remove();
+        flag = document.getElementsByClassName('task-content').length;
     }
 
-    let textCmd = getTextCmd(parameters.commands);
+    for (let i = 0; i < parseInt(varCount.value); ++i) {
+        let parameters = {
+            start: randomInteger(1, 5),
+            finish: randomInteger(15, 25),
+            commands: transformCommands(generateCommands())
+        };
 
-    let cmds = {
-        first: textCmd[0],
-        second: textCmd[1]
-    };
+        let answer = generateResult(parameters);
 
-    const verbForms = {
-        'п': 'прибавляет к числу на экране',
-        'в': 'вычитает из числа на экране',
-        'у': 'умножает число на экране на'
+        while (answer < 5) {
+            parameters.start = randomInteger(1, 5);
+            parameters.finish = randomInteger(15, 25);
+            parameters.commands = transformCommands(generateCommands());
+            answer = generateResult(parameters);
+        }
+
+        let textCmd = getTextCmd(parameters.commands);
+
+        let cmds = {
+            first: textCmd[0],
+            second: textCmd[1]
+        };
+
+        const verbForms = {
+            'п': 'прибавляет к числу на экране',
+            'в': 'вычитает из числа на экране',
+            'у': 'умножает число на экране на'
+        }
+
+        let cmdForms = {
+            first: verbForms[cmds.first[0]] + ' ' + cmds.first[cmds.first.length - 1],
+            second: verbForms[cmds.second[0]] + ' ' + cmds.second[cmds.second.length - 1]
+        };
+
+        let text = TEXT.format(cmds.first, cmds.second, cmdForms.first, cmdForms.second, parameters.start, parameters.finish);
+        
+        addTask(text, i + 1, answer);
     }
-
-    let cmdForms = {
-        first: verbForms[cmds.first[0]] + ' ' + cmds.first[cmds.first.length - 1],
-        second: verbForms[cmds.second[0]] + ' ' + cmds.second[cmds.second.length - 1]
-    };
-
-    let firstCmd = document.querySelector('.first-cmd');
-    firstCmd.textContent = cmds.first;
-
-    let secondCmd = document.querySelector('.second-cmd');
-    secondCmd.textContent = cmds.second;
-
-    let firstVerbForm = document.querySelector('.first-verb-form');
-    firstVerbForm.textContent = cmdForms.first;
-
-    let secondVerbForm = document.querySelector('.second-verb-form');
-    secondVerbForm.textContent = cmdForms.second;
-
-    let begin = document.querySelector('.start-value');
-    begin.textContent = parameters.start;
-
-    let end = document.querySelector('.finish-value');
-    end.textContent = parameters.finish;
-
-    let ans = document.querySelector('.answer');
-    ans.textContent = answer;
-
-    let taskID = document.querySelector('.task-id-text');
-    taskID.textContent = 'ID: #' + key.value.toString();
 
     Math.seedrandom(key.value);
 }
