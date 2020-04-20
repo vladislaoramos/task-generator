@@ -19,17 +19,38 @@ ul {
     margin: 10px;
 }
 
-li {
+.intro-list {
+    margin-top: -10px;
+}
+
+.menu-item {
     list-style: none;
     list-style-position: outside;
+}
+
+.intro-list-item {
+    list-style-position: inside;
 }
 
 a { 
     text-decoration: none;
 }
 
+input {
+    margin-top: 8px;
+    margin-bottom: 8px; 
+}
+
 .answer-spoiler {
     margin-top: 10px;;
+}
+
+.answer {
+    font-weight: bold;
+}
+
+.task-text {
+    white-space: pre-wrap;
 }
 
 #header {
@@ -46,13 +67,13 @@ a {
 }
 
 #content {
-    margin: 10px 200px 20px 25%;
+    margin: 10px 200px 50px 25%;
     padding: 5px;
     border: 1px solid #333;
 }
 
 #footer {
-    position: absolute;
+    position: fixed;
     width: 100%;
     padding-top: 20px;
     bottom: 0;
