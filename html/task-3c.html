@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Генератор задач</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
         <div id="header"><h1><a id="index-link" href="index.html">Генератор задач по информатике</a></h1></div>
@@ -11,31 +11,31 @@
             <h3>Типы заданий</h3>
             <ul id="tasks-list">
                 <li class="menu-item"><a href="task-1a.html">Бит чётности</a></li>
-                <li class="menu-item"><b>Калькулятор</b></li>
-                <li class="menu-item"><a href="task-3a.html">Динамика</a></li>
+                <li class="menu-item"><a href="task-2a.html">Калькулятор</a></li>
+                <li class="menu-item"><b>Динамика</b></li>
             </ul>
             <hr>
             <ul>
-                <li class="menu-item"><a href="task-2a.html">Уровень A</a></li>
-                <li class="menu-item"><a href="task-2b.html">Уровень B</a></li>
+                <li class="menu-item"><a href="task-3a.html">Уровень A</a></li>
+                <li class="menu-item"><a href="task-3b.html">Уровень B</a></li>
                 <li class="menu-item"><b>Уровень C</b></li>
             </ul>
         </div>
         <div id="content">
-            <h2>Калькулятор</h2>
+            <h2>Динамика</h2>
             <div class="intro">
                 <p>
-                    <strong>Тема:</strong> Поиск алгоритма минимальной длины для исполнителя. <br>
+                    <strong>Тема:</strong> Динамическое программирование. <br>
                     <strong>Что нужно знать:</strong>
                     <ul class="intro-list">
                         <li class="intro-list-item">
-                            исполнитель – это человек, группа людей, животное, машина или другой объект, который может понимать и выполнять некоторые команды.
+                            динамическое программирование – это способ решения сложных задач путем сведения их к более простым задачам того же типа;
                         </li>
                         <li class="intro-list-item">
-                            чтобы определить все возможные результаты работы алгоритма, нужно обозначить входные данные как переменные и выполнить алгоритм
+                            с помощью динамического программирования решаются задачи, которые требуют полного перебор вариантов;
                         </li>
                         <li class="intro-list-item">
-                            для нахождения оптимальной программы, преобразующей одно число в другое с помощью заданного набора команд, проще всего строить дерево возможных вариантов, выясняя, какие результаты в принципе можно получить после одного шага, после двух шагов и т.д.
+                            динамическое программирование позволяет ускорить выполнение программы за счет использования дополнительной памяти; полный перебор не требуется, поскольку запоминаются решения всех задач с меньшими значениями параметров.
                         </li>
                     </ul>
                 </p>
@@ -57,7 +57,7 @@
             <!-- ВСТАВКА -->
         </div>
         <div id="footer">&copy; Владислав Рамусь</div>
-        <script src="task-2c.js"></script>
+        <script src="../js/task-3c.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
     </body>
 </html>

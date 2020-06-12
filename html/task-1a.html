@@ -3,39 +3,41 @@
     <head>
         <meta charset="utf-8">
         <title>Генератор задач</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
         <div id="header"><h1><a id="index-link" href="index.html">Генератор задач по информатике</a></h1></div>
         <div id="sidebar">
             <h3>Типы заданий</h3>
             <ul id="tasks-list">
-                <li class="menu-item"><a href="task-1a.html">Бит чётности</a></li>
+                <li class="menu-item"><b>Бит чётности</b></li>
                 <li class="menu-item"><a href="task-2a.html">Калькулятор</a></li>
-                <li class="menu-item"><b>Динамика</b></li>
+                <li class="menu-item"><a href="task-3a.html">Динамика</a></li>
             </ul>
             <hr>
             <ul>
-                <li class="menu-item"><a href="task-3a.html">Уровень A</a></li>
-                <li class="menu-item"><a href="task-3b.html">Уровень B</a></li>
-                <li class="menu-item"><b>Уровень C</b></li>
+                <li class="menu-item"><b>Уровень A</b></li>
+                <li class="menu-item"><a href="task-1b.html">Уровень B</a></li>
+                <li class="menu-item"><a href="task-1c.html">Уровень C</a></li>
             </ul>
         </div>
         <div id="content">
-            <h2>Динамика</h2>
+            <h2>Бит чётности</h2>
             <div class="intro">
                 <p>
-                    <strong>Тема:</strong> Динамическое программирование. <br>
+                    <strong>Тема:</strong> Выполнение и анализ простых алгоритмов. <br>
                     <strong>Что нужно знать:</strong>
                     <ul class="intro-list">
                         <li class="intro-list-item">
-                            динамическое программирование – это способ решения сложных задач путем сведения их к более простым задачам того же типа;
+                            сумма двух цифр в десятичной системе счисления находится в диапазоне от 0 до 18 (9 + 9)
                         </li>
                         <li class="intro-list-item">
-                            с помощью динамического программирования решаются задачи, которые требуют полного перебор вариантов;
+                            <em>бит чётности</em> – это дополнительный контрольный бит, который добавляется к двоичному коду
+                            так, чтобы количество единиц в полученном двоичном коде стало чётным; если в исходном
+                            коде уже было чётное количество единиц, дописывается 0, если нечётное – дописывается 1.
                         </li>
                         <li class="intro-list-item">
-                            динамическое программирование позволяет ускорить выполнение программы за счет использования дополнительной памяти; полный перебор не требуется, поскольку запоминаются решения всех задач с меньшими значениями параметров.
+                            при добавлении к двоичной записи числа нуля справа число увеличивается в 2 раза
                         </li>
                     </ul>
                 </p>
@@ -57,7 +59,7 @@
             <!-- ВСТАВКА -->
         </div>
         <div id="footer">&copy; Владислав Рамусь</div>
-        <script src="task-3c.js"></script>
+        <script src="../js/task-1a.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
     </body>
 </html>

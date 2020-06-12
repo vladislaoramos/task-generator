@@ -3,41 +3,39 @@
     <head>
         <meta charset="utf-8">
         <title>Генератор задач</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
         <div id="header"><h1><a id="index-link" href="index.html">Генератор задач по информатике</a></h1></div>
         <div id="sidebar">
             <h3>Типы заданий</h3>
             <ul id="tasks-list">
-                <li class="menu-item"><b>Бит чётности</b></li>
-                <li class="menu-item"><a href="task-2a.html">Калькулятор</a></li>
+                <li class="menu-item"><a href="task-1a.html">Бит чётности</a></li>
+                <li class="menu-item"><b>Калькулятор</b></li>
                 <li class="menu-item"><a href="task-3a.html">Динамика</a></li>
             </ul>
             <hr>
             <ul>
-                <li class="menu-item"><a href="task-1a.html">Уровень A</a></li>
+                <li class="menu-item"><a href="task-2a.html">Уровень A</a></li>
                 <li class="menu-item"><b>Уровень B</b></li>
-                <li class="menu-item"><a href="task-1c.html">Уровень C</a></li>
+                <li class="menu-item"><a href="task-2c.html">Уровень C</a></li>
             </ul>
         </div>
         <div id="content">
-            <h2>Бит чётности</h2>
+            <h2>Калькулятор</h2>
             <div class="intro">
                 <p>
-                    <strong>Тема:</strong> Выполнение и анализ простых алгоритмов. <br>
+                    <strong>Тема:</strong> Поиск алгоритма минимальной длины для исполнителя. <br>
                     <strong>Что нужно знать:</strong>
                     <ul class="intro-list">
                         <li class="intro-list-item">
-                            сумма двух цифр в десятичной системе счисления находится в диапазоне от 0 до 18 (9 + 9)
+                            исполнитель – это человек, группа людей, животное, машина или другой объект, который может понимать и выполнять некоторые команды.
                         </li>
                         <li class="intro-list-item">
-                            <em>бит чётности</em> – это дополнительный контрольный бит, который добавляется к двоичному коду
-                            так, чтобы количество единиц в полученном двоичном коде стало чётным; если в исходном
-                            коде уже было чётное количество единиц, дописывается 0, если нечётное – дописывается 1.
+                            чтобы определить все возможные результаты работы алгоритма, нужно обозначить входные данные как переменные и выполнить алгоритм
                         </li>
                         <li class="intro-list-item">
-                            при добавлении к двоичной записи числа нуля справа число увеличивается в 2 раза
+                            для нахождения оптимальной программы, преобразующей одно число в другое с помощью заданного набора команд, проще всего строить дерево возможных вариантов, выясняя, какие результаты в принципе можно получить после одного шага, после двух шагов и т.д.
                         </li>
                     </ul>
                 </p>
@@ -59,7 +57,7 @@
             <!-- ВСТАВКА -->
         </div>
         <div id="footer">&copy; Владислав Рамусь</div>
-        <script src="task-1b.js"></script>
+        <script src="../js/task-2b.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
     </body>
 </html>
