@@ -148,6 +148,7 @@ let key;
 let varCount;
 
 form.onclick = function() {
+    submitButton.disabled = false;
     key = document.querySelector('.key-field');
     varCount = document.querySelector('.count-field');
     Math.seedrandom(key.value);

@@ -135,6 +135,7 @@ let key;
 let varCount;
 
 form.onclick = function() {
+    submitButton.disabled = false;
     key = document.querySelector('.key-field');
     varCount = document.querySelector('.count-field');
     Math.seedrandom(key.value);
@@ -189,6 +190,8 @@ form.onsubmit = function (evt) {
         
         addTask(text, i + 1, answer);
     }
+
+    submitButton.disabled = true;
 
     Math.seedrandom(key.value);
 }
