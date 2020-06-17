@@ -28,26 +28,11 @@ let varCount;
 let taskID = document.querySelector('.task-id-text');
 let supField = document.querySelector('.supremum');
 
-// let keyField = document.querySelector('.key-field');
-// let countField = document.querySelector('.key-field');
-
-// keyField.oninput = function () {
-//   if (keyField.value.length == 5) {
-//     submitButton.disabled = false;
-//   }
-// };
-
-// countField.oninput = function () {
-//   if (countField.value.length < 0 || countField.value.length > 30) {
-//     submitButton.disabled = false;
-//   }
-// };
-
 form.onclick = function() {
     submitButton.disabled = false;
     key = document.querySelector('.key-field');
     varCount = document.querySelector('.count-field');
-    Math.seedrandom(key.value);
+    Math.seedrandom(parseInt(key.value));
 }
 
 TEXT = "На вход алгоритма подаётся натуральное число N. Алгоритм строит по нему новое число R следующим образом.\n" +
@@ -112,6 +97,13 @@ form.onsubmit = function(evt) {
         flag = document.getElementsByClassName('task-content').length;
     }
 
+    if (isNaN(parseInt(key.value)) 
+        || (parseInt(key.value)).toString().length != (key.value).length 
+        || isNaN(parseInt(varCount.value)) 
+        || parseInt(varCount.value) > 500) {
+        return;
+    }
+
     for (let i = 0; i < parseInt(varCount.value); ++i) {
         let number = randomInteger(20, 30);
         let answer = parseInt(generateResult(number), 2);
@@ -122,5 +114,5 @@ form.onsubmit = function(evt) {
     }
     submitButton.disabled = true;
 
-    Math.seedrandom(key.value);
+    Math.seedrandom(parseInt(key.value));
 }

@@ -47,7 +47,7 @@ form.onclick = function() {
     submitButton.disabled = false;
     key = document.querySelector('.key-field');
     varCount = document.querySelector('.count-field');
-    Math.seedrandom(key.value);
+    Math.seedrandom(parseInt(key.value));
 }
 
 TEXT = "На вход алгоритма подаётся натуральное число N. Алгоритм строит по нему новое число R следующим образом.\n" +
@@ -112,6 +112,13 @@ form.onsubmit = function(evt) {
         flag = document.getElementsByClassName('task-content').length;
     }
 
+    if (isNaN(parseInt(key.value)) 
+        || (parseInt(key.value)).toString().length != (key.value).length 
+        || isNaN(parseInt(varCount.value)) 
+        || parseInt(varCount.value) > 500) {
+        return;
+    }
+
     for (let i = 0; i < parseInt(varCount.value); ++i) {
         let number = randomInteger(46, 55);
         let answer = parseInt(generateResult(number), 2);
@@ -123,5 +130,5 @@ form.onsubmit = function(evt) {
     
     submitButton.disabled = true;
 
-    Math.seedrandom(key.value);
+    Math.seedrandom(parseInt(key.value));
 }

@@ -138,7 +138,7 @@ form.onclick = function() {
     submitButton.disabled = false;
     key = document.querySelector('.key-field');
     varCount = document.querySelector('.count-field');
-    Math.seedrandom(key.value);
+    Math.seedrandom(parseInt(key.value));
 }
 
 form.onsubmit = function (evt) {
@@ -150,6 +150,13 @@ form.onsubmit = function (evt) {
         let div = document.querySelector('.task-content');
         div.remove();
         flag = document.getElementsByClassName('task-content').length;
+    }
+
+    if (isNaN(parseInt(key.value)) 
+        || (parseInt(key.value)).toString().length != (key.value).length 
+        || isNaN(parseInt(varCount.value)) 
+        || parseInt(varCount.value) > 500) {
+        return;
     }
 
     for (let i = 0; i < parseInt(varCount.value); ++i) {
@@ -193,5 +200,5 @@ form.onsubmit = function (evt) {
 
     submitButton.disabled = true;
 
-    Math.seedrandom(key.value);
+    Math.seedrandom(parseInt(key.value));
 }
