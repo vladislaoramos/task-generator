@@ -28,6 +28,7 @@ let varCount;
 let taskID = document.querySelector('.task-id-text');
 let supField = document.querySelector('.supremum');
 
+
 form.onclick = function() {
     submitButton.disabled = false;
     key = document.querySelector('.key-field');
