@@ -28,20 +28,6 @@ let varCount;
 let taskID = document.querySelector('.task-id-text');
 let supField = document.querySelector('.supremum');
 
-// let keyField = document.querySelector('.key-field');
-// let countField = document.querySelector('.key-field');
-
-// keyField.oninput = function () {
-//   if (keyField.value.length == 5) {
-//     submitButton.disabled = false;
-//   }
-// };
-
-// countField.oninput = function () {
-//   if (countField.value.length < 0 || countField.value.length > 30) {
-//     submitButton.disabled = false;
-//   }
-// };
 
 form.onclick = function() {
     submitButton.disabled = false;
@@ -114,6 +100,7 @@ form.onsubmit = function(evt) {
 
     if (isNaN(parseInt(key.value)) 
         || (parseInt(key.value)).toString().length != (key.value).length 
+        || (parseInt(varCount.value)).toString().length != (varCount.value).length 
         || isNaN(parseInt(varCount.value)) 
         || parseInt(varCount.value) > 500) {
         return;

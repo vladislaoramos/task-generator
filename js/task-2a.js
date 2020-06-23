@@ -166,6 +166,7 @@ form.onsubmit = function(evt) {
 
     if (isNaN(parseInt(key.value)) 
         || (parseInt(key.value)).toString().length != (key.value).length 
+        || (parseInt(varCount.value)).toString().length != (varCount.value).length 
         || isNaN(parseInt(varCount.value)) 
         || parseInt(varCount.value) > 500) {
         return;
@@ -205,9 +206,6 @@ form.onsubmit = function(evt) {
     }
     
     submitButton.disabled = true;
-
-    // let taskID = document.querySelector('.task-id-text');
-    // taskID.textContent = 'ID: #' + key.value.toString();
 
     Math.seedrandom(parseInt(key.value));
 }

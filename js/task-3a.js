@@ -154,6 +154,7 @@ form.onsubmit = function (evt) {
 
     if (isNaN(parseInt(key.value)) 
         || (parseInt(key.value)).toString().length != (key.value).length 
+        || (parseInt(varCount.value)).toString().length != (varCount.value).length 
         || isNaN(parseInt(varCount.value)) 
         || parseInt(varCount.value) > 500) {
         return;
